@@ -1,31 +1,16 @@
-#include<iostream>
-#include<conio.h>
-#include<cmath>
+#include <iostream>
+#include <fstream>
+
 using namespace std;
-int main()
-{
-    double Principal;        
-    double IntRate;         
-    double PayPerYear;     
-    double NumYears;        
-    double Payment;          
-    double number,denom;    
-    double b,e;             
-    cout<<"Введите сумму займа  ";
-    cin>> Principal;
-  
-    cout<<"Введите процентную ставку ";
-    cin>>IntRate;
-    cout<<"Введите количество выплат в год ";
-    cin>> PayPerYear;
-    cout<<"Введите срок займа в годах ";
-    cin>>NumYears;
-    number=IntRate*Principal/PayPerYear;
-    e=-(PayPerYear* NumYears);
-    b=(IntRate/PayPerYear)+1;
-    denom=(1-pow(b,e));
-    Payment=number/denom;
-    cout<<"\n\nРазмер платежа по займу = "<<Payment<<endl;
-    getch();
+
+int main(){
+
+    double summa,first_pay, srok;
+    cin>>summa>>first_pay>>srok;
+    if(first_pay < summa * 0.2){
+        return 0;
+    }
+    cout<< (summa - first_pay) / (11 + (srok - 1)*12);
+
     return 0;
 }
